@@ -1,0 +1,10 @@
+#VSCode
+launch.json
+
+#Python
+**/venv/
+
+#PyInstaller
+**/*.spec
+**/build/
+**/dist/

@@ -53,7 +53,7 @@ def arguments_parser() -> argparse.Namespace:
         dest='debug',
         required=False,
         action='store_true',
-        help='Print game process details and keep console window open after game process termination.'
+        help='Print game process details in real-time and keep console window open after game process termination.'
     )
     return arg_parser.parse_args()
 
@@ -127,7 +127,7 @@ class WelcomeLauncher():
             free_cores_info = 'Game cores given by user\n'
         else:
             game_cores_set = all_cores_set - free_cores_set
-            unavailable_cores_set = free_cores_set - all_cores_set
+            unavailable_cores_set = set()
             free_cores_info = f'{min_free_physical_cores=}\n'
 
         self.game_cores = sorted(game_cores_set)
@@ -141,7 +141,6 @@ class WelcomeLauncher():
         else:
             game_cores_info = ''
             error_info += 'Empty game cores map!\n'
-
         separator_info = '--=x=' * 10 + '--\n'
         error_info = '\n' + separator_info + 'ERROR:\n' + error_info + separator_info if (error_info != '') else ''
 
@@ -178,7 +177,7 @@ def main():
         )
         input()
         sys.exit()
-    
+
     if args.launcher != 'None':
         try:
             launcher_process = Popen([args.launcher])

@@ -40,7 +40,7 @@ options:
   -l LAUNCHER, --launcher LAUNCHER
                         Set the ANOMALY launcher file. If passed None as launcher, do not execute the game launcher and
                         just waits the game process. (default: AnomalyLauncher.exe)
-  -d, --debug           Print game process details and keep console window open after game process termination.
+  -d, --debug           Print game process details in real-time and keep console window open after game process termination.
 ```
 
 ### Compatibility:
@@ -110,8 +110,8 @@ Opções:
                         Seta o arquivo do launcher do ANOMALY. Se fornecido o valor None como launcher, nada
                         será executado e o script aguardará que um processo do Anomaly seja criado.
                         (Padrão: AnomalyLauncher.exe)
-  -d, --debug           Exibe os detalhes de execução do jogo e mantém a janela do launcher aberta após a
-                        finalização do processo dojogo.
+  -d, --debug           Exibe os detalhes de execução do jogo em tempo real e mantém a janela do launcher aberta
+                        após a finalização do processo dojogo.
 ```
 
 ### Compatibilidade:

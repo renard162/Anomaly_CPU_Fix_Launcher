@@ -7,6 +7,13 @@ While this process is simple, it is easy to forget (often only realizing it when
 
 For this reason, I developed this launcher. Built with Python 3.12.8 and packaged as an executable using PyInstaller, it runs the original Anomaly launcher (or any other mod based on Anomaly, such as Gamma or EFP) and waits for any game executable to be detected. When this happens, the script automatically sets the game's CPU affinity to all available cores except the first physical core and the first logical core, preventing potential crashes.
 
+---
+
+#### Attention:
+This program does not replace the Anomaly launcher or Mod Organizer; it is a tool designed to automate the process of setting the game's CPU affinity to the correct cores. With this tool, you can, for example, create shortcuts for the game that automatically set its affinity to specific cores selected manually by the user. Alternatively, if run normally without any arguments, the game will launch with affinity set to all cores except the first physical/logical one.
+
+---
+
 ### Installation:
 If you're using the original STALKER Anomaly or any mod that does not alter its file structure, simply extract the `CPUFixAnomalyLauncher.exe` file into the game's directory (same directory of `AnomalyLauncher.exe`) and launch the game using this new launcher.
 
@@ -36,6 +43,22 @@ options:
   -d, --debug           Print game process details and keep console window open after game process termination.
 ```
 
+### Compatibility:
+In direct execution mode, without any arguments passed, the program looks for the `AnomalyLauncher.exe` file in the same directory. This file can be any launcher, including unofficial ones.
+
+When running, the program searches for one of the following executable files to adjust CPU affinity:
+
+- `AnomalyDX11AVX.exe`
+- `AnomalyDX11.exe`
+- `AnomalyDX10AVX.exe`
+- `AnomalyDX10.exe`
+- `AnomalyDX9AVX.exe`
+- `AnomalyDX9.exe`
+- `AnomalyDX8AVX.exe`
+- `AnomalyDX8.exe`
+
+These are the game's standard executable names. Regardless of modifications to the executables, the mod being played, or the file locations, if the game's executable matches one of these names, it will be recognized normally. Since many mods modify the game executables, the most general way to detect the running game is by checking the file name.
+
 ### Source Code and Compilation:
 [GitHub repository](https://github.com/renard162/Anomaly_CPU_Fix_Launcher)
 
@@ -51,6 +74,13 @@ Existe um bug que ocorre de forma aleatória no STALKER Anomaly causando o fecha
 Esse processo é fácil de ser feito mas é fácil de se esquecer (descobrindo-se apenas quando o bug acontece) e pode ser bastante irritante de se repetir diversas vezes. Um [addon](https://www.moddb.com/mods/stalker-anomaly/addons/mo2-plugin-anomaly-cpu-affinity) para o Mod Organizer 2 já existe, porém deve ser executado manualmente no Mod Organizer a cada execução do jogo.
 
 Por este motivo desewnvolvi este launcher, desenvolvido em Python 3.12.8 e compactado em um executável por meio do PyInstaller, ele carrega o launcher original do Anomaly (ou qualquer outro mod que utilize o anomaly de base, como o Gamma ou o EFP) e espera que algum executável do jogo seja decetado. Quando isto ocorre, o script seta automaticamente a afiniade do jogo para todos os núcleos disponíveis no PC exceto o primeiro físico e o primeiro núcleo lógico, prevenindo assim os eventuais crashes.
+
+---
+
+#### Atenção:
+Este programa não substitui o launcher do Anomaly nem o Mod Organizer, se trata de uma ferramenta para automatizar o processo de configurar a afinidade do jogo aos núcleos corretos. Com esta ferramenta pode-se, por exemplo, criar atalhos para o jogo que automaticamente configuram a afinidade do mesmo a determinados núcleos selecionados manualmente pelo usuário ou, rodando normalmente, sem nenhum argumento, executar o jogo com a afinidade com todos os núcleos, exceto o primeiro físico/lógico.
+
+---
 
 ### Instalação:
 Caso esteja usando o STALKER Anomaly original ou qualquer mod que não altere sua estrutura de arquivos, basta extrair o arquivo `CPUFixAnomalyLauncher.exe` no diretório do jogo (mesmo diretório do arquivo `AnomalyLauncher.exe`) e carregar o jogo por meio deste novo launcher.
@@ -73,12 +103,32 @@ Opções:
   -m MIN_PHYSICAL_CORES, --min-free-cpu-cores MIN_PHYSICAL_CORES
                         Seta a quantidade mínima de núcleos físicos reservados para o sistema. (Padrão: 1)
   -c CORE_MAP [CORE_MAP ...], --core-map CORE_MAP [CORE_MAP ...]
-                        Seta manualmente os núcleos que serão utilizados pelo jogo. Se este argumento for fornecido, a seleção automática de núcleos é desabilitada.
+                        Seta manualmente os núcleos que serão utilizados pelo jogo. Se este argumento for
+                        fornecido, a seleção automática de núcleos é desabilitada.
                         (exemplo: passando o argumento -c 1 2 3 permite ao jogo utilizar os núcleos 1, 2 e 3)
   -l LAUNCHER, --launcher LAUNCHER
-                        Seta o arquivo do launcher do ANOMALY. Se fornecido o valor None como launcher, nada será executado e o script aguardará que um processo do Anomaly seja criado. (Padrão: AnomalyLauncher.exe)
-  -d, --debug           Exibe os detalhes de execução do jogo e mantém a janela do launcher aberta após a finalização do processo dojogo.
+                        Seta o arquivo do launcher do ANOMALY. Se fornecido o valor None como launcher, nada
+                        será executado e o script aguardará que um processo do Anomaly seja criado.
+                        (Padrão: AnomalyLauncher.exe)
+  -d, --debug           Exibe os detalhes de execução do jogo e mantém a janela do launcher aberta após a
+                        finalização do processo dojogo.
 ```
+
+### Compatibilidade:
+No modo de execução direta, sem nenhum argumento passado, o programa procura pelo arquivo `AnomalyLauncher.exe` no mesmo diretório. Este programa pode ser qualquer launcher, mesmo os não oficiais.
+
+Quando executado, o programa procura por um dos seguintes arquivos sendo executados para alterar a afinidade com os núcleos:
+
+- `AnomalyDX11AVX.exe`
+- `AnomalyDX11.exe`
+- `AnomalyDX10AVX.exe`
+- `AnomalyDX10.exe`
+- `AnomalyDX9AVX.exe`
+- `AnomalyDX9.exe`
+- `AnomalyDX8AVX.exe`
+- `AnomalyDX8.exe`
+
+Estes arquivos são os executáveis do jogo com seu nome padrão. Independente de quais modificações nos executáveis, mod esteja sendo jogado ou local desses arquivos, se o executável do jogo possuir um desses nomes, será reconhecido normalmente. Como existem muitos mods que alteram os executáveis do jogo, então a forma mais geral de se detectar o jogo rodando foi procurando pelo nome do arquivo.
 
 ### Código fonte e compilação:
 [Repositório do GitHub](https://github.com/renard162/Anomaly_CPU_Fix_Launcher)

@@ -8,7 +8,7 @@ While this process is simple, it is easy to forget (often only realizing it when
 For this reason, I developed this launcher. Built with Python 3.12.8 and packaged as an executable using PyInstaller, it runs the original Anomaly launcher (or any other mod based on Anomaly, such as Gamma or EFP) and waits for any game executable to be detected. When this happens, the script automatically sets the game's CPU affinity to all available cores except the first physical core and the first logical core, preventing potential crashes.
 
 ### Installation:
-If you're using the original STALKER Anomaly or any mod that does not alter its file structure, simply extract the CPUFixAnomalyLauncher.exe file into the game's directory (same directory of `AnomalyLauncher.exe`) and launch the game using this new launcher.
+If you're using the original STALKER Anomaly or any mod that does not alter its file structure, simply extract the `CPUFixAnomalyLauncher.exe` file into the game's directory (same directory of `AnomalyLauncher.exe`) and launch the game using this new launcher.
 
 ### Usage:
 Just run the launcher. A command prompt window will appear, displaying game information while waiting for the Anomaly executable to start. Once the game is launched, after a few seconds, this command window will close automatically, as it is no longer needed. At this point, the game's affinity for the first physical and first logical cores will be disabled.

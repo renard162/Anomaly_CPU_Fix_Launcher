@@ -142,8 +142,8 @@ class WelcomeLauncher():
             game_cores_info = ''
             error_info += 'Empty game cores map!\n'
 
-        separator_info = '--=x=' * 10 + '--'
-        error_info = '\n' + separator_info + '\nERROR:\n' + error_info + separator_info + '\n' if (error_info != '') else ''
+        separator_info = '--=x=' * 10 + '--\n'
+        error_info = '\n' + separator_info + 'ERROR:\n' + error_info + separator_info if (error_info != '') else ''
 
         print(free_cores_info + total_cores_info + game_cores_info + error_info)
 

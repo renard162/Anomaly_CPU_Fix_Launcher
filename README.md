@@ -3,7 +3,7 @@
 ## English
 There is a randomly occurring bug in STALKER Anomaly that causes the game to crash to desktop abruptly. This can be fixed by setting the game's CPU affinity to all available cores except the first one through the Windows Task Manager.
 
-While this process is simple, it is easy to forget (often only realizing it when the crash happens), and repeating it multiple times can be quite annoying. A Mod Organizer 2 [addon](https://www.moddb.com/mods/stalker-anomaly/addons/mo2-plugin-anomaly-cpu-affinity) already exists to handle this, but it must be manually executed through the Mod Organizer every time the game is launched.
+While this process is simple, it is easy to forget (often only realizing it when the crash happens), and repeating it multiple times can be quite annoying. A Mod Organizer 2 [addon](https://www.moddb.com/mods/stalker-anomaly/addons/automatic-anomalycpuaffinity) already exists to handle this,however, those who do not use Mod Organizer do not yet have this automation.
 
 For this reason, I developed this launcher. Built with Python 3.12.8 and packaged as an executable using PyInstaller, it runs the original Anomaly launcher (or any other mod based on Anomaly, such as Gamma or EFP) and waits for any game executable to be detected. When this happens, the script automatically sets the game's CPU affinity to all available cores except the first physical core and the first logical core, preventing potential crashes.
 
@@ -71,7 +71,7 @@ Dependencies:
 ## Português
 Existe um bug que ocorre de forma aleatória no STALKER Anomaly causando o fechamento abrupto do jogo que pode ser corrigido setando-se a afinidade do jogo por todas as CPUs disponíveis exceto a primeira pelo gerenciador de tarefas do Windows.
 
-Esse processo é fácil de ser feito mas é fácil de se esquecer (descobrindo-se apenas quando o bug acontece) e pode ser bastante irritante de se repetir diversas vezes. Um [addon](https://www.moddb.com/mods/stalker-anomaly/addons/mo2-plugin-anomaly-cpu-affinity) para o Mod Organizer 2 já existe, porém deve ser executado manualmente no Mod Organizer a cada execução do jogo.
+Esse processo é fácil de ser feito mas é fácil de se esquecer (descobrindo-se apenas quando o bug acontece) e pode ser bastante irritante de se repetir diversas vezes. Um [addon](https://www.moddb.com/mods/stalker-anomaly/addons/automatic-anomalycpuaffinity) para o Mod Organizer 2 já existe, porém, aqueles que não utilizam o Mod Organizer ainda não possuíam esta automação.
 
 Por este motivo desewnvolvi este launcher, desenvolvido em Python 3.12.8 e compactado em um executável por meio do PyInstaller, ele carrega o launcher original do Anomaly (ou qualquer outro mod que utilize o anomaly de base, como o Gamma ou o EFP) e espera que algum executável do jogo seja decetado. Quando isto ocorre, o script seta automaticamente a afiniade do jogo para todos os núcleos disponíveis no PC exceto o primeiro físico e o primeiro núcleo lógico, prevenindo assim os eventuais crashes.
 

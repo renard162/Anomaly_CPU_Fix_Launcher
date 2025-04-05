@@ -5,7 +5,7 @@ There is a randomly occurring bug in STALKER Anomaly that causes the game to cra
 
 While this process is simple, it is easy to forget (often only realizing it when the crash happens), and repeating it multiple times can be quite annoying. A Mod Organizer 2 [addon](https://www.moddb.com/mods/stalker-anomaly/addons/automatic-anomalycpuaffinity) already exists to handle this,however, those who do not use Mod Organizer do not yet have this automation.
 
-For this reason, I developed this launcher. Built with Python 3.12.8 and packaged as an executable using PyInstaller, it runs the original Anomaly launcher (or any other mod based on Anomaly, such as Gamma or EFP) and waits for any game executable to be detected. When this happens, the script automatically sets the game's CPU affinity to all available cores except the first physical core and the first logical core, preventing potential crashes.
+For this reason, I developed this launcher. Built with Python 3.12, it runs the original Anomaly launcher (or any other mod based on Anomaly, such as Gamma or EFP) and waits for any game executable to be detected. When this happens, the script automatically sets the game's CPU affinity to all available cores except the first physical core and the first logical core, preventing potential crashes.
 
 ---
 
@@ -15,7 +15,9 @@ This program does not replace the Anomaly launcher or Mod Organizer; it is a too
 ---
 
 ### Installation:
-If you're using the original STALKER Anomaly or any mod that does not alter its file structure, simply extract the `CPUFixAnomalyLauncher.exe` file into the game's directory (same directory of `AnomalyLauncher.exe`) and launch the game using this new launcher.
+If you're using the original STALKER Anomaly or any mod that does not alter its file structure, simply extract the `CPUFixAnomalyLauncher.bat` file and the `CPUFixAnomalyLauncher` directory into the game's directory (same directory as `AnomalyLauncher.exe`) and launch the game using the `CPUFixAnomalyLauncher.bat` file.
+
+Previously, I used PyInstaller to generate an executable file, which eliminated the need for the batch file, the Python script directory, and the interpreter. However, there were issues with antivirus false positives. Since I don’t plan to pay for a certificate just for a mod launcher, I decided to use open files and call the script via a batch file instead.
 
 ### Usage:
 Just run the launcher. A command prompt window will appear, displaying game information while waiting for the Anomaly executable to start. Once the game is launched, after a few seconds, this command window will close automatically, as it is no longer needed. At this point, the game's affinity for the first physical and first logical cores will be disabled.
@@ -73,7 +75,7 @@ Existe um bug que ocorre de forma aleatória no STALKER Anomaly causando o fecha
 
 Esse processo é fácil de ser feito mas é fácil de se esquecer (descobrindo-se apenas quando o bug acontece) e pode ser bastante irritante de se repetir diversas vezes. Um [addon](https://www.moddb.com/mods/stalker-anomaly/addons/automatic-anomalycpuaffinity) para o Mod Organizer 2 já existe, porém, aqueles que não utilizam o Mod Organizer ainda não possuíam esta automação.
 
-Por este motivo desewnvolvi este launcher, desenvolvido em Python 3.12.8 e compactado em um executável por meio do PyInstaller, ele carrega o launcher original do Anomaly (ou qualquer outro mod que utilize o anomaly de base, como o Gamma ou o EFP) e espera que algum executável do jogo seja decetado. Quando isto ocorre, o script seta automaticamente a afiniade do jogo para todos os núcleos disponíveis no PC exceto o primeiro físico e o primeiro núcleo lógico, prevenindo assim os eventuais crashes.
+Por este motivo desewnvolvi este launcher, desenvolvido em Python 3.12, ele carrega o launcher original do Anomaly (ou qualquer outro mod que utilize o anomaly de base, como o Gamma ou o EFP) e espera que algum executável do jogo seja decetado. Quando isto ocorre, o script seta automaticamente a afiniade do jogo para todos os núcleos disponíveis no PC exceto o primeiro físico e o primeiro núcleo lógico, prevenindo assim os eventuais crashes.
 
 ---
 
@@ -83,7 +85,9 @@ Este programa não substitui o launcher do Anomaly nem o Mod Organizer, se trata
 ---
 
 ### Instalação:
-Caso esteja usando o STALKER Anomaly original ou qualquer mod que não altere sua estrutura de arquivos, basta extrair o arquivo `CPUFixAnomalyLauncher.exe` no diretório do jogo (mesmo diretório do arquivo `AnomalyLauncher.exe`) e carregar o jogo por meio deste novo launcher.
+Caso esteja usando o STALKER Anomaly original ou qualquer mod que não altere sua estrutura de arquivos, basta extrair o arquivo `CPUFixAnomalyLauncher.bat` e o diretório `CPUFixAnomalyLauncher` no mesmo diretório do jogo (mesmo diretório do arquivo `AnomalyLauncher.exe`) e carregar o jogo por meio do arquivo `CPUFixAnomalyLauncher.bat`.
+
+Inicialmente eu havia utilizado o PyInstaller para gerar um arquivo executável, o que dispensava o uso do arquivo bat, do diretório contendo o script python e o interpretador, mas houveram problemas de falsos positivos de antivirus. Como não pretendo pagar por um certificado apenas para um launcher de um mod, então decidi por utilizar os arquivos abertos e chamar o script por meio de um arquivo bat.
 
 ### Utilização:
 Basta executar o launcher, uma janela de prompt será exibida com as informações do jogo aguardando o executável do Anomaly. Assim que o jogo for aberto, após alguns segundos, essa janela de comando se fechará automaticamente já que não existe mais utilidade para ela e a afinidade do jogo pelo primeiro núcleo físico e primeiro núcleo lógico estará desabilitado.

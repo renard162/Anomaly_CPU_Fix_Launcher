@@ -28,7 +28,7 @@ If adjustments are needed due to mods or if you want to launch Anomaly through M
 For more details on available command-line arguments, simply run: `CPUFixAnomalyLauncher.exe --help`:
 
 ```
-usage: CPUFixAnomalyLauncher.exe [-h] [-m MIN_PHYSICAL_CORES] [-c CORE_MAP [CORE_MAP ...]] [-l LAUNCHER] [-d]
+usage: CPUFixAnomalyLauncher.bat [-h] [-m MIN_PHYSICAL_CORES] [-c CORE_MAP [CORE_MAP ...]] [-l LAUNCHER] [-d]
 
 Executes Anomaly Launcher and removes the CPU affinity of N first cores from the game when it launches.
 
@@ -98,7 +98,7 @@ Caso sejam necessários ajustes por conta de mods ou mesmo para executar o Anoma
 Para maiores informações a respeito dos argumentos de execução, basta executar o comando `CPUFixAnomalyLauncher.exe --help`:
 
 ```
-uso: CPUFixAnomalyLauncher.exe [-h] [-m MIN_PHYSICAL_CORES] [-c CORE_MAP [CORE_MAP ...]] [-l LAUNCHER] [-d]
+uso: CPUFixAnomalyLauncher.bat [-h] [-m MIN_PHYSICAL_CORES] [-c CORE_MAP [CORE_MAP ...]] [-l LAUNCHER] [-d]
 
 Executa o AnomalyLauncher e remove a afinidade de CPU do jogo pelos N primeiros cores quando o jogo inicia.
 

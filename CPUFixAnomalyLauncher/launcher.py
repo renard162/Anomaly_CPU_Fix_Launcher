@@ -12,10 +12,13 @@ ANOMALY_LAUNCHER_FILE = 'AnomalyLauncher.exe'
 
 
 def arguments_parser() -> argparse.Namespace:
-    launcher_file = sys.argv[0]
+    script_launcher_file = ''
+    if (len(sys.argv) > 1) and sys.argv[1].find('.bat'):
+        script_launcher_file = sys.argv[1]
+
     arg_parser = argparse.ArgumentParser(
         formatter_class=argparse.RawDescriptionHelpFormatter,
-        prog=str(launcher_file),
+        prog=script_launcher_file,
         description=(
            'Executes Anomaly Launcher and removes the CPU affinity of N first cores from the game when it launches.'
         )
@@ -55,7 +58,7 @@ def arguments_parser() -> argparse.Namespace:
         action='store_true',
         help='Print game process details in real-time and keep console window open after game process termination.'
     )
-    return arg_parser.parse_args()
+    return arg_parser.parse_known_args()[0]
 
 
 def debugger_print_lock(game_process:Process):

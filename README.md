@@ -140,4 +140,3 @@ Estes arquivos são os executáveis do jogo com seu nome padrão. Independente d
 Dependências:
 - [Python 3.12](https://www.python.org)
 - [Psutil 7.0](https://pypi.org/project/psutil/)
-- [PyInstaller 6.12](https://pypi.org/project/pyinstaller/)
